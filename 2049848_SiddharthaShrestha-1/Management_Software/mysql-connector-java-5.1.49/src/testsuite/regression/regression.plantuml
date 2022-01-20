@@ -1,0 +1,1627 @@
+@startuml
+
+title __REGRESSION's Class Diagram__\n
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.BlobRegressionTest {
+          + BlobRegressionTest()
+          {static} + main()
+          + testBug10850()
+          + testBug20453671()
+          + testBug20453712()
+          + testBug2670()
+          + testBug34677()
+          + testBug5490()
+          + testBug8096()
+          + testBug9040()
+          + testUpdatableBlobsWithCharsets()
+          + testUpdateLongBlobGT16M()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.CachedRowsetTest {
+          + CachedRowsetTest()
+          {static} + main()
+          + testBug5188()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.CallableStatementRegressionTest {
+          + CallableStatementRegressionTest()
+          {static} + main()
+          + testBitSp()
+          + testBug10310()
+          + testBug12417()
+          + testBug15121()
+          + testBug15464()
+          + testBug17898()
+          + testBug21462()
+          + testBug22024()
+          + testBug22297()
+          + testBug25379()
+          + testBug25715()
+          + testBug26143()
+          + testBug26959()
+          + testBug27400()
+          + testBug28689()
+          + testBug31823()
+          + testBug32246()
+          + testBug35199()
+          + testBug3539()
+          + testBug3540()
+          + testBug43576()
+          + testBug49831()
+          + testBug57022()
+          + testBug60816()
+          + testBug7026()
+          + testBug73774()
+          + testBug79561()
+          + testBug84324()
+          + testBug87704()
+          + testBug9319()
+          + testBug95796()
+          + testBug9682()
+          + testHugeNumberOfParameters()
+          + testNotReallyCallableStatement()
+          + testPrepareOfMultiRs()
+          # serverSupportsStoredProcedures()
+          - doBug32246()
+          - execProcBug49831()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.CharsetRegressionTest {
+          + CharsetRegressionTest()
+          + testBug25504578()
+          + testBug72630()
+          + testBug73663()
+          + testBug81196()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.CharsetRegressionTest.Bug73663StatementInterceptor {
+          + preProcess()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest {
+          # testServerPrepStmtDeadlockCounter : int
+          + ConnectionRegressionTest()
+          {static} + containsMessage()
+          {static} + main()
+          + testAuthCleartextPlugin()
+          + testAuthTestPlugin()
+          + testAutoCommitLB()
+          + testBug10144()
+          + testBug10496()
+          + testBug11237()
+          + testBug11259()
+          + testBug11879()
+          + testBug11976()
+          + testBug12218()
+          + testBug12229()
+          + testBug12752()
+          + testBug12753()
+          + testBug13048()
+          + testBug13453()
+          + testBug14563127()
+          + testBug15065()
+          + testBug15544()
+          + testBug15570()
+          + testBug16224249()
+          + testBug16634180()
+          + testBug17251955()
+          + testBug18869381()
+          + testBug1914()
+          + testBug19354014()
+          + testBug20685022()
+          + testBug20825727()
+          + testBug21286268()
+          + testBug21934573()
+          + testBug21947042()
+          + testBug22643()
+          + testBug22678872()
+          + testBug22730682()
+          + testBug22848249()
+          + testBug23143279()
+          + testBug23281()
+          + testBug23626()
+          + testBug24706()
+          + testBug25514()
+          + testBug25545()
+          + testBug26819691()
+          + testBug27131768()
+          + testBug27655()
+          + testBug29106()
+          + testBug29329326()
+          + testBug29852()
+          + testBug31053()
+          + testBug32216()
+          + testBug32877()
+          + testBug33734()
+          + testBug34703()
+          + testBug34937()
+          + testBug3554()
+          + testBug35660()
+          + testBug36662()
+          + testBug36948()
+          + testBug37570()
+          + testBug3790()
+          + testBug37931()
+          + testBug41172()
+          + testBug4334()
+          + testBug43421()
+          + testBug44324()
+          + testBug44587()
+          + testBug45171()
+          + testBug45419()
+          + testBug46637()
+          + testBug46925()
+          + testBug47494()
+          + testBug48442()
+          + testBug48486()
+          + testBug48605()
+          + testBug49700()
+          + testBug51266()
+          + testBug51643()
+          + testBug51783()
+          + testBug56100()
+          + testBug56429()
+          + testBug56955()
+          + testBug57262()
+          + testBug57662()
+          + testBug58706()
+          + testBug61201()
+          + testBug62577()
+          + testBug63284()
+          + testBug64205()
+          + testBug67803()
+          + testBug68011()
+          + testBug68400()
+          + testBug68733()
+          + testBug68763()
+          + testBug69452()
+          + testBug69506()
+          + testBug69579()
+          + testBug6966()
+          + testBug69746()
+          + testBug69777()
+          + testBug70677()
+          + testBug70785()
+          + testBug71038()
+          + testBug71084()
+          + testBug71850()
+          + testBug72712()
+          + testBug73053()
+          + testBug74690()
+          + testBug74711()
+          + testBug75168()
+          + testBug75209()
+          + testBug75592()
+          + testBug75670()
+          + testBug7607()
+          + testBug77171()
+          + testBug77649()
+          + testBug7952()
+          + testBug79612()
+          + testBug86741()
+          + testBug88227()
+          + testBug88232()
+          + testBug88242()
+          + testBug89948()
+          + testBug91317()
+          + testBug9206()
+          + testCSC5765()
+          + testCachingSha2PasswordPlugin()
+          + testChangeUser()
+          + testChangeUserClosedConn()
+          + testChangeUserNoDb()
+          + testCollation41()
+          + testConnectionAttributes()
+          + testDefaultPlugin()
+          + testDisabledPlugins()
+          + testEnableTLSVersion()
+          + testExpiredPassword()
+          + testFailoverReadOnly()
+          + testIsLocal()
+          + testLongAuthResponsePayload()
+          + testNewCharsetsConfiguration()
+          + testOldPasswordPlugin()
+          + testPropertiesDescriptionsKeys()
+          + testReconnectWithCachedConfig()
+          + testReplicationConnectWithMultipleMasters()
+          + testReplicationConnectWithNoMaster()
+          + testReplicationConnectionGroupHostManagement()
+          + testReplicationConnectionHostManagement()
+          + testReplicationConnectionMemory()
+          + testReplicationConnectionNoSlavesBasics()
+          + testReplicationConnectionNoSlavesRemainOnMaster()
+          + testReplicationJMXInterfaces()
+          + testSetReadOnly()
+          + testSha256PasswordPlugin()
+          + testStackOverflowOnMissingInterceptor()
+          + testStatementComment()
+          + testTLSVersion()
+          + testThreeAttemptsPlugin()
+          + testTwoQuestionsPlugin()
+          + testUnreliableSocketFactory()
+          - allowsRsa()
+          - assertCurrentUser()
+          - checkBug32216()
+          - checkPingQuery()
+          - countTestConnections()
+          - findNamedThreadCount()
+          - getCharacterSetsAndCollations()
+          - getReplicationMBean()
+          - getTestReplicationConnectionNoSlaves()
+          - isResultSetClosedForTestBug69746()
+          - isStatementClosedForTestBug69746()
+          {static} - killConnection()
+          - pluginIsActive()
+          - subTestBug22848249A()
+          - subTestBug22848249B()
+          - subTestBug22848249C()
+          - subTestBug22848249D()
+          - testBug18869381WithProperties()
+          - testBug20825727ChangePassword()
+          - testBug20825727CreateUser()
+          - testBug20825727TestLogin()
+          - testBug21286268AssertConnectedToAndReadOnly()
+          - testBug22678872CheckConnectionsHistory()
+          - testBug23143279RunTest()
+          - testBug56100AssertHost()
+          - testBug62577TestUrl()
+          - testBug71084AssertCase()
+          - testBug89948Check()
+          - testConnectionAttributes()
+          - testMemLeakBatch()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.AuthTestPlugin {
+          - password : String
+          + destroy()
+          + getProtocolPluginName()
+          + init()
+          + isReusable()
+          + nextAuthenticationStep()
+          + requiresConfidentiality()
+          + reset()
+          + setAuthenticationParameters()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.Bug29329326QueryInterceptor {
+          ~ cnt : int
+          + preProcess()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.Bug56100StatementInterceptor {
+          + preProcess()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.Bug71038StatementInterceptor {
+          ~ cnt : int
+          + preProcess()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.Bug72712StatementInterceptor {
+          + preProcess()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.Bug75168LoadBalanceExceptionChecker {
+          + destroy()
+          + init()
+          + shouldExceptionTriggerFailover()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.Bug75168StatementInterceptor {
+          {static} ~ previousConnection : Connection
+          + destroy()
+          + preProcess()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.Bug75592StatementInterceptor {
+          + preProcess()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.Bug88227StatementInterceptor {
+          {static} + mayHaveWarnings : boolean
+          + destroy()
+          + executeTopLevelOnly()
+          + init()
+          + postProcess()
+          + preProcess()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.CancelTask {
+          - c : Connection
+          - num : int
+          + run()
+          ~ CancelTask()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.CountingReBalanceStrategy {
+          {static} - rebalancedTimes : int
+          + destroy()
+          {static} + getTimesRebalanced()
+          + init()
+          + pickConnection()
+          {static} + resetTimesRebalanced()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.ForcedLoadBalanceStrategy {
+          {static} - forceFutureServerTimes : int
+          {static} - forcedFutureServer : String
+          + destroy()
+          {static} + dontForceFutureServer()
+          {static} + forceFutureServer()
+          + init()
+          + pickConnection()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.PollTask {
+          - c : Connection
+          - num : int
+          - pst1 : PreparedStatement
+          - st1 : Statement
+          + run()
+          ~ PollTask()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.PortNumberSocketFactory {
+          + PortNumberSocketFactory()
+          + connect()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.TestBug21934573ExceptionInterceptor {
+          {static} ~ mainThreadLock : Object
+          {static} - replConnGroupLocks : Set<String>
+          {static} - threadIsWaiting : boolean
+          - useSyncGroupServersLock : boolean
+          + destroy()
+          + init()
+          + interceptException()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.TestBug64205StatementInterceptor {
+          + postProcess()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.TestBug67803ExceptionInterceptor {
+          + destroy()
+          + init()
+          + interceptException()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.TestBug71850ExceptionInterceptor {
+          - counter : int
+          + destroy()
+          + init()
+          + interceptException()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.TestBug73053InputStreamWrapper {
+          ~ loopCount : int
+          ~ underlyingInputStream : InputStream
+          + TestBug73053InputStreamWrapper()
+          + available()
+          + close()
+          + equals()
+          + hashCode()
+          + mark()
+          + markSupported()
+          + read()
+          + read()
+          + read()
+          + reset()
+          + skip()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.TestBug73053SocketFactory {
+          ~ underlyingSocket : Socket
+          + afterHandshake()
+          + beforeHandshake()
+          + connect()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.TestBug73053SocketWrapper {
+          ~ underlyingSocket : Socket
+          + TestBug73053SocketWrapper()
+          + bind()
+          + close()
+          + connect()
+          + connect()
+          + equals()
+          + getChannel()
+          + getInetAddress()
+          + getInputStream()
+          + getKeepAlive()
+          + getLocalAddress()
+          + getLocalPort()
+          + getLocalSocketAddress()
+          + getOOBInline()
+          + getOutputStream()
+          + getPort()
+          + getReceiveBufferSize()
+          + getRemoteSocketAddress()
+          + getReuseAddress()
+          + getSendBufferSize()
+          + getSoLinger()
+          + getSoTimeout()
+          + getTcpNoDelay()
+          + getTrafficClass()
+          + hashCode()
+          + isBound()
+          + isClosed()
+          + isConnected()
+          + isInputShutdown()
+          + isOutputShutdown()
+          + sendUrgentData()
+          + setKeepAlive()
+          + setOOBInline()
+          + setPerformancePreferences()
+          + setReceiveBufferSize()
+          + setReuseAddress()
+          + setSendBufferSize()
+          + setSoLinger()
+          + setSoTimeout()
+          + setTcpNoDelay()
+          + setTrafficClass()
+          + shutdownInput()
+          + shutdownOutput()
+          + toString()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.ThreadPerTaskExecutor {
+          + execute()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.ThreeAttemptsPlugin {
+          - counter : int
+          - password : String
+          + destroy()
+          + getProtocolPluginName()
+          + init()
+          + isReusable()
+          + nextAuthenticationStep()
+          + requiresConfidentiality()
+          + reset()
+          + setAuthenticationParameters()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ConnectionRegressionTest.TwoQuestionsPlugin {
+          - password : String
+          + destroy()
+          + getProtocolPluginName()
+          + init()
+          + isReusable()
+          + nextAuthenticationStep()
+          + requiresConfidentiality()
+          + reset()
+          + setAuthenticationParameters()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.DataSourceRegressionTest {
+          {static} + DS_DATABASE_PROP_NAME : String
+          {static} + DS_HOST_PROP_NAME : String
+          {static} + DS_PASSWORD_PROP_NAME : String
+          {static} + DS_PORT_PROP_NAME : String
+          {static} + DS_USER_PROP_NAME : String
+          - ctx : Context
+          - tempDir : File
+          + DataSourceRegressionTest()
+          {static} + main()
+          + setUp()
+          + tearDown()
+          + testBug16791()
+          + testBug19169()
+          + testBug20242()
+          + testBug32101()
+          + testBug35810()
+          + testBug3848()
+          + testBug3920()
+          + testBug42267()
+          + testBug4808()
+          + testBug72632()
+          + testBug72890()
+          + testCSC4616()
+          - bindDataSource()
+          - createJNDIContext()
+          - lookupDatasourceInJNDI()
+          - removeFromRef()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.EscapeProcessorRegressionTest {
+          + EscapeProcessorRegressionTest()
+          + testBug11498()
+          + testBug11797()
+          + testBug14909()
+          + testBug25399()
+          + testBug60598()
+          + testBug63526()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.MetaDataRegressionTest {
+          {static} - TYPES_MAP : Map<Integer, String>
+          + MetaDataRegressionTest()
+          {static} + main()
+          + testABunchOfReturnTypes()
+          + testBug11575()
+          + testBug11781()
+          + testBug12970()
+          + testBug12975()
+          + testBug13277()
+          + testBug13601()
+          + testBug14815()
+          + testBug15854()
+          + testBug16277()
+          + testBug16436511()
+          + testBug17248345()
+          + testBug18258()
+          + testBug18554()
+          + testBug19803348()
+          + testBug20491()
+          + testBug20504139()
+          + testBug20727196()
+          + testBug21215151()
+          + testBug21267()
+          + testBug21544()
+          + testBug21978216()
+          + testBug22613()
+          + testBug22628()
+          + testBug23212347()
+          + testBug23303()
+          + testBug23304()
+          + testBug25624()
+          + testBug2607()
+          + testBug27867()
+          + testBug27915()
+          + testBug27916()
+          + testBug2852()
+          + testBug2855()
+          + testBug31187()
+          + testBug33594()
+          + testBug34194()
+          + testBug35115()
+          + testBug3570()
+          + testBug38367()
+          + testBug41269()
+          + testBug4138()
+          + testBug43714()
+          + testBug44451()
+          + testBug44508()
+          + testBug4742()
+          + testBug4860()
+          + testBug4880()
+          + testBug51912()
+          + testBug52167()
+          + testBug57808()
+          + testBug61150()
+          + testBug61203()
+          + testBug61332()
+          + testBug63456()
+          + testBug63800()
+          + testBug6399()
+          + testBug65871()
+          + testBug68098()
+          + testBug68307()
+          + testBug69290()
+          + testBug69298()
+          + testBug7033()
+          + testBug7081()
+          + testBug73775()
+          + testBug76187()
+          + testBug8792()
+          + testBug8800()
+          + testBug8803()
+          + testBug8812()
+          + testBug9320()
+          + testBug9769()
+          + testBug9778()
+          + testBug9917()
+          + testCharVarchar()
+          + testCharacterSetForDBMD()
+          + testFixForBug1673()
+          + testGetColumns()
+          + testGetColumnsBug1099()
+          + testGetColumnsUnsigned()
+          + testGetPropertyInfo()
+          + testIsCaseSensitive()
+          + testLongText()
+          + testNoSystemTablesReturned()
+          + testQuotedGunk()
+          + testRSMDToStringFromDBMD()
+          + testReservedWords()
+          + testSupportesGroupByUnrelated()
+          + testSupportsCorrelatedSubqueries()
+          + testTypes()
+          - callFunction()
+          - callProcedure()
+          - checkABunchOfReturnTypesForConnection()
+          - checkBug27915()
+          - checkGetProcedureColumnsForBug69298()
+          - checkGetProceduresForBug69298()
+          - checkMetaDataInfoForBug17248345()
+          - checkMetadataForBug22613()
+          - checkReturnedColumnsForBug44451()
+          - checkRsmdForBug13277()
+          - checkTypes()
+          - compareResultSets()
+          - testAbsenceOfMetadataForQuery()
+          - testBug18554()
+          - testBug61203checks()
+          - testBug65871_testCatalog()
+          - testBug65871_testCatalogs()
+          - testBug65871_testTable()
+          - testDatetime()
+          - testTimestamp()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.MetaDataRegressionTest.StatementInterceptorBug61332 {
+          + preProcess()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.MicroPerformanceRegressionTest {
+          {static} - BASELINE_TIMES : Map<String, Double>
+          {static} - LEEWAY : double
+          {static} - ORIGINAL_LOOP_TIME_MS : double
+          {static} - scaleFactor : double
+          {static} - scaleFactorSamples : double[]
+          + MicroPerformanceRegressionTest()
+          {static} + main()
+          + setUp()
+          + testBug6359()
+          + testPreparedStatementTimes()
+          + testResultSetAccessors()
+          {static} - adjustScaleFactor()
+          {static} - calculateScaleFactor()
+          - checkTime()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.NumbersRegressionTest {
+          + NumbersRegressionTest()
+          {static} + main()
+          + testBigInt()
+          + testBug5729()
+          + testBug8484()
+          + testFloatsAndReals()
+          + testIntShouldReturnLong()
+          + testPrecisionAndScale()
+          - testPrecisionForType()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.PooledConnectionRegressionTest {
+          # closeEventCount : int
+          # connectionErrorEventCount : int
+          - cpds : ConnectionPoolDataSource
+          + PooledConnectionRegressionTest()
+          {static} + main()
+          + setUp()
+          {static} + suite()
+          + tearDown()
+          + testBug35489()
+          + testBug7136()
+          + testCloseEvent()
+          + testConnectionReclaim()
+          + testPacketTooLargeException()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.PooledConnectionRegressionTest.ConnectionListener {
+          + connectionClosed()
+          + connectionErrorOccurred()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ResultSetRegressionTest {
+          + ResultSetRegressionTest()
+          {static} + main()
+          + testAllTypesForNull()
+          + testBogusTimestampAsString()
+          + testBooleans()
+          + testBug10156()
+          + testBug10212()
+          + testBug10485()
+          + testBug11190()
+          + testBug11552()
+          + testBug12104()
+          + testBug13043()
+          + testBug13374()
+          + testBug14562()
+          + testBug14609()
+          + testBug14897()
+          + testBug15604()
+          + testBug15677()
+          + testBug16169()
+          + testBug16841()
+          + testBug17450()
+          + testBug18880()
+          + testBug19282()
+          + testBug19536760()
+          + testBug19568()
+          + testBug19724()
+          + testBug20306()
+          + testBug20479()
+          + testBug20485()
+          + testBug20804635()
+          + testBug20913289()
+          + testBug21062()
+          + testBug21379()
+          + testBug21814()
+          + testBug22305979()
+          + testBug23197238()
+          + testBug2359()
+          + testBug24710()
+          + testBug24886()
+          + testBug25517()
+          + testBug25650305()
+          + testBug25787()
+          + testBug25894()
+          + testBug26173()
+          + testBug2623()
+          + testBug2654()
+          + testBug26789()
+          + testBug27317()
+          + testBug27431()
+          + testBug28085()
+          + testBug30664()
+          + testBug32525()
+          + testBug33162()
+          + testBug33678()
+          + testBug34762()
+          + testBug34913()
+          + testBug35610()
+          + testBug36051()
+          + testBug38252()
+          + testBug38387()
+          + testBug39911()
+          + testBug41484()
+          + testBug41484_2()
+          + testBug43759()
+          + testBug4482()
+          + testBug45757()
+          + testBug4689()
+          + testBug48820()
+          + testBug49516()
+          + testBug49797()
+          + testBug5032()
+          + testBug5069()
+          + testBug5136()
+          + testBug56479()
+          + testBug5664()
+          + testBug5717()
+          + testBug60313()
+          + testBug6231()
+          + testBug64204()
+          + testBug6537()
+          + testBug65503()
+          + testBug6561()
+          + testBug6619()
+          + testBug67318()
+          + testBug6743()
+          + testBug70704()
+          + testBug72000()
+          + testBug72023()
+          + testBug72609()
+          + testBug75309()
+          + testBug7686()
+          + testBug7715()
+          + testBug78685()
+          + testBug80441()
+          + testBug80522()
+          + testBug80532()
+          + testBug80631()
+          + testBug83368()
+          + testBug83662()
+          + testBug8428()
+          + testBug8868()
+          + testBug9098()
+          + testBug9236()
+          + testBug9437()
+          + testBug94585()
+          + testBug9684()
+          + testClobTruncate()
+          + testClobberStreamingRS()
+          + testEmptyResultSetGet()
+          + testEmptyStringsWithNumericGetters()
+          + testFixForBug1592()
+          + testFixForBug2006()
+          + testGetLongBug()
+          + testGetTimestampWithDate()
+          + testIsBeforeFirstOnEmpty()
+          + testMetaDataIsWritable()
+          + testNPEWithStatementsAndTime()
+          + testNPEWithUsageAdvisor()
+          + testNegativeOneIsTrue()
+          + testNextAndPrevious()
+          + testNotUpdatable()
+          + testRanges()
+          + testStreamingRegBug()
+          + testTruncationDisable()
+          + testTruncationOfNonSigDigits()
+          + testUpdatability()
+          + testUpdatabilityAndEscaping()
+          + testUpdatabilityWithQuotes()
+          + testUpdateClob()
+          + testUsageAdvisorOnZeroRowResultSet()
+          + testbug25328()
+          + testbug30851()
+          - checkBug20306()
+          - checkEmptyConvertToZero()
+          - checkEmptyConvertToZeroException()
+          - checkRangeMatrix()
+          - checkRanges()
+          - checkResult17450()
+          - checkResultsBug19568()
+          - checkTimestampNanos()
+          - checkUpdatabilityMessage()
+          - exercise35610()
+          - exerciseUpdatableResultSet()
+          - testAllFieldsForNotNull()
+          - testAllFieldsForNull()
+          - testBug19536760CheckStates()
+          - testBug23197238Assert()
+          - testBug78685CheckData()
+          - traverseResultSetBug14562()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.ResultSetRegressionTest.TestBug67318ExceptionInterceptor {
+          + alreadyClosedCounter : int
+          + destroy()
+          + init()
+          + interceptException()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.StatementRegressionTest {
+          # testServerPrepStmtDeadlockCounter : int
+          {static} ~ count : int
+          {static} ~ nextID : int
+          {static} ~ tests : int[][]
+          + StatementRegressionTest()
+          {static} + main()
+          + testBug10155()
+          + testBug10630()
+          + testBug11115()
+          + testBug11540()
+          + testBug11663()
+          + testBug11798()
+          + testBug13255()
+          + testBug15024()
+          + testBug15141()
+          + testBug15383()
+          + testBug17099()
+          + testBug17587()
+          + testBug1774()
+          + testBug18041()
+          + testBug18091639()
+          + testBug18740()
+          + testBug1901()
+          + testBug1933()
+          + testBug1934()
+          + testBug1958()
+          + testBug19615()
+          + testBug20029()
+          + testBug20650()
+          + testBug20687()
+          + testBug20888()
+          + testBug21207()
+          + testBug21438()
+          + testBug21876798()
+          + testBug22290()
+          + testBug22359()
+          + testBug23188498()
+          + testBug23201930()
+          + testBug24344()
+          + testBug24360()
+          + testBug25009()
+          + testBug25025()
+          + testBug25073()
+          + testBug2606()
+          + testBug2671()
+          + testBug27412()
+          + testBug27453692()
+          + testBug28256()
+          + testBug28469()
+          + testBug28596()
+          + testBug28851()
+          + testBug30508()
+          + testBug30550()
+          + testBug3103()
+          + testBug31193()
+          + testBug32577()
+          + testBug33823()
+          + testBug34093()
+          + testBug34093_nonbatch()
+          + testBug34185()
+          + testBug34518()
+          + testBug34555()
+          + testBug35170()
+          + testBug3520()
+          + testBug3557()
+          + testBug35653()
+          + testBug35666()
+          + testBug3620()
+          + testBug36478()
+          + testBug3697()
+          + testBug37458()
+          + testBug3804()
+          + testBug3873()
+          + testBug38747()
+          + testBug39352()
+          + testBug39426()
+          + testBug39956()
+          + testBug40279()
+          + testBug40439()
+          + testBug41161()
+          + testBug4119()
+          + testBug41448()
+          + testBug41532()
+          + testBug41566()
+          + testBug41730()
+          + testBug42253()
+          + testBug4311()
+          + testBug43196()
+          + testBug44056()
+          + testBug4510()
+          + testBug46788()
+          + testBug4718()
+          + testBug48172()
+          + testBug5012()
+          + testBug50348()
+          + testBug5133()
+          + testBug51666()
+          + testBug51704()
+          + testBug51776()
+          + testBug5191()
+          + testBug5235()
+          + testBug54095()
+          + testBug54175()
+          + testBug5450()
+          + testBug5510()
+          + testBug55340()
+          + testBug58728()
+          + testBug5874()
+          + testBug61501()
+          + testBug64805()
+          + testBug66430()
+          + testBug66947()
+          + testBug6823()
+          + testBug68562()
+          + testBug71131()
+          + testBug71396()
+          + testBug71672()
+          + testBug71672PreparedStatement()
+          + testBug71672Statement()
+          + testBug71923()
+          + testBug73163()
+          + testBug7461()
+          + testBug74932()
+          + testBug74998()
+          + testBug75956()
+          + testBug77183()
+          + testBug77449()
+          + testBug77681()
+          + testBug78313()
+          + testBug78961()
+          + testBug80615()
+          + testBug81063()
+          + testBug81706()
+          + testBug8181()
+          + testBug84783()
+          + testBug84813()
+          + testBug8487()
+          + testBug87429()
+          + testBug87534()
+          + testBug92089()
+          + testBug96442()
+          + testBug9704()
+          + testBug98237()
+          + testBugDupeKeySingle()
+          + testBustedGGKColumnNames()
+          + testBustedGGKWithPSExecute()
+          + testClientPreparedSetBoolean()
+          + testCloseTwice()
+          + testCommentParsing()
+          + testCsc4194()
+          + testDeadlockBatchBehavior()
+          + testExecutionPlanForSlowQueries()
+          + testGetGeneratedKeysAllCases()
+          + testLancesBitMappingBug()
+          + testLikeWithBackslashes()
+          + testLimitAndMaxRows()
+          + testLoadData()
+          + testMoreLanceBugs()
+          + testNullClob()
+          + testPStmtTypesBug()
+          + testParameterBoundsCheck()
+          + testQuotedIdRecognition()
+          + testReversalOfScanFlags()
+          + testServerPrepStmtAndDate()
+          + testServerPrepStmtDeadlock()
+          + testSetCharacterStream()
+          + testSetFetchSize()
+          + testSetMaxRows()
+          + testTimestampNPE()
+          + testTruncationWithChar()
+          + testUpdatableStream()
+          + testbug12565726()
+          + testbug61866()
+          # isJdbc4()
+          - addBatchItems()
+          - checkBug34093()
+          - checkOpenResultsFor44056()
+          - checkPreparedStatementForTestBug50348()
+          - checkResultSetForTestBug50348()
+          - createGGKTables()
+          - doGGKTestPreparedStatement()
+          - doGGKTestStatement()
+          - dropGGKTables()
+          - execQueryBug5191()
+          - getByteArrayString()
+          - innerBug6823()
+          - testBug68562BatchWithSize()
+          - testBug68562ExecuteBatch()
+          - testBug71396MultiSettingsCheck()
+          - testBug71396PrepStatementCheck()
+          - testBug71396PrepStatementCheck()
+          - testBug71396PrepStatementClose()
+          - testBug71396PrepStatementInit()
+          - testBug71396PrepStatementMultiCheck()
+          - testBug71396PrepStatementMultiCheck()
+          - testBug71396StatementCheck()
+          - testBug71396StatementInit()
+          - testBug71396StatementMultiCheck()
+          - testBug71396StatementMultiCheck()
+          - testBug74932ExecuteStmts()
+          - testBug80615CheckComStmtStatus()
+          - testBug81063CheckAndReset()
+          - testBug84813CheckAndReset()
+          - testCsc4194InsertCheckBlob()
+          - testCsc4194InsertCheckText()
+          - testStreamsForBug15024()
+          - timeBatch()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.StatementRegressionTest.Bug39426Interceptor {
+          {static} + vals : List<Integer>
+          ~ prevSql : String
+          + preProcess()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.StatementRegressionTest.IsClosedInputStream {
+          ~ isClosed : boolean
+          + IsClosedInputStream()
+          + IsClosedInputStream()
+          + close()
+          + isClosed()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.StatementRegressionTest.IsClosedReader {
+          ~ isClosed : boolean
+          + IsClosedReader()
+          + close()
+          + isClosed()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.StatementRegressionTest.PrepareThread {
+          ~ c : Connection
+          + run()
+          ~ PrepareThread()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.StatementRegressionTest.ScanDetectingInterceptor {
+          {static} ~ hasSeenBadIndex : boolean
+          {static} ~ hasSeenScan : boolean
+          + postProcess()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.StatementRegressionTest.TestBug51666StatementInterceptor {
+          + preProcess()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.StatementRegressionTest.TestBug77183StatementInterceptor {
+          {static} + countInterceptions : int
+          + preProcess()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.StatementRegressionTest.TestBug77449StatementInterceptor {
+          - sendFracSecs : boolean
+          + init()
+          + preProcess()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.StatementRegressionTest.TestBug77681StatementInterceptor {
+          - execCounter : int
+          - expected : char[]
+          {static} - expectedNonRWBS : char[]
+          {static} - expectedRWBS : char[]
+          + init()
+          + preProcess()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.StatementRegressionTest.TestBug81706StatementInterceptor {
+          {static} + isActive : boolean
+          {static} + testCase : String
+          + preProcess()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.StressRegressionTest {
+          - numThreadsStarted : int
+          + StressRegressionTest()
+          {static} + main()
+          + testBug67760()
+          + testContention()
+          + testCreateConnections()
+          + testCreateConnectionsUnderLoad()
+          ~ contentiousWork()
+          ~ reportDone()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.StressRegressionTest.BusyThread {
+          ~ stop : boolean
+          + run()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.StressRegressionTest.ContentionThread {
+          ~ elapsedTimeMillis : long
+          ~ threadConn : Connection
+          ~ threadNumber : int
+          ~ threadStmt : Statement
+          + ContentionThread()
+          + run()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.StressRegressionTest.CreateThread {
+          ~ numConnections : int
+          + CreateThread()
+          + CreateThread()
+          + CreateThread()
+          + run()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.StressRegressionTest.SharedInfoForTestBug67760 {
+          {static} ~ job1Iterations : int
+          {static} ~ job2Iterations : int
+          {static} ~ prevJob1Iterations : int
+          {static} ~ prevJob2Iterations : int
+          {static} ~ running : boolean
+          {static} ~ iterationsChanged()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.StringRegressionTest {
+          + StringRegressionTest()
+          {static} + main()
+          + testAsciiCharConversion()
+          + testBase64Decoder()
+          + testBug11614()
+          + testBug11629()
+          + testBug23645()
+          + testBug24840()
+          + testBug25047()
+          + testBug4010()
+          + testBug64731()
+          + testBug7601()
+          + testCodePage1252()
+          + testEncodingRegression()
+          + testEscapeSJISDoubleEscapeBug()
+          + testGreekUtf8411()
+          + testLatin1Encoding()
+          + testNewlines()
+          + testSjis5c()
+          + testUtf8Encoding()
+          + testUtf8Encoding2()
+          - bytesAreSame()
+          - testBase64DecoderItem()
+          - testConversionForString()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.SubqueriesRegressionTest {
+          {static} - REPETITIONS : int
+          + SubqueriesRegressionTest()
+          {static} + main()
+          + setUp()
+          + tearDown()
+          + testSubQuery1()
+          + testSubQuery2()
+          + testSubQuery3()
+          + testSubQuery4()
+          + testSubQuery5()
+          - createTables()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.SyntaxRegressionTest {
+          + SyntaxRegressionTest()
+          + testAlterTableAlgorithmLock()
+          + testCreateTableDataDirectory()
+          + testCreateTablespace()
+          + testDiscardImportPartitions()
+          + testExchangePartition()
+          + testExplicitPartitions()
+          + testFULLTEXTSearchInnoDB()
+          + testGcsReplicationCmds()
+          + testGetStackedDiagnostics()
+          + testGisFunctions()
+          + testHints()
+          + testIPv6Functions()
+          + testInnodbTablespaceEncryption()
+          + testJsonType()
+          + testRenameIndex()
+          + testSetMergeThreshold()
+          + testTableCompression()
+          + testTransportableTablespaces()
+          + testUserAccountLocking()
+          + testUserAccountPwdExpiration()
+          - copyFile()
+          - testCreateTablespaceCheckTables()
+          - testCreateTablespaceCheckTablespaces()
+          - testHintsSyntax()
+          - testJsonTypeCheckFunction()
+          - testSetMergeThresholdIndices()
+      }
+    }
+  }
+  
+
+  namespace testsuite {
+    namespace regression {
+      class testsuite.regression.UtilsRegressionTest {
+          + UtilsRegressionTest()
+          {static} + main()
+          + testBug70436()
+          + testBug82115()
+          + testTimeZones()
+      }
+    }
+  }
+  
+
+  testsuite.regression.CharsetRegressionTest +-down- testsuite.regression.CharsetRegressionTest.Bug73663StatementInterceptor
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.AuthTestPlugin
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.Bug29329326QueryInterceptor
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.Bug56100StatementInterceptor
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.Bug71038StatementInterceptor
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.Bug72712StatementInterceptor
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.Bug75168LoadBalanceExceptionChecker
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.Bug75168StatementInterceptor
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.Bug75592StatementInterceptor
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.Bug88227StatementInterceptor
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.CancelTask
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.CountingReBalanceStrategy
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.ForcedLoadBalanceStrategy
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.PollTask
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.PortNumberSocketFactory
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.TestBug21934573ExceptionInterceptor
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.TestBug64205StatementInterceptor
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.TestBug67803ExceptionInterceptor
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.TestBug71850ExceptionInterceptor
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.TestBug73053InputStreamWrapper
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.TestBug73053SocketFactory
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.TestBug73053SocketWrapper
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.ThreadPerTaskExecutor
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.ThreeAttemptsPlugin
+  testsuite.regression.ConnectionRegressionTest +-down- testsuite.regression.ConnectionRegressionTest.TwoQuestionsPlugin
+  testsuite.regression.ConnectionRegressionTest.AuthTestPlugin .up.|> AuthenticationPlugin
+  testsuite.regression.ConnectionRegressionTest.Bug75168LoadBalanceExceptionChecker .up.|> LoadBalanceExceptionChecker
+  testsuite.regression.ConnectionRegressionTest.Bug88227StatementInterceptor .up.|> StatementInterceptorV2
+  testsuite.regression.ConnectionRegressionTest.CancelTask .up.|> Runnable
+  testsuite.regression.ConnectionRegressionTest.PollTask .up.|> Runnable
+  testsuite.regression.ConnectionRegressionTest.TestBug21934573ExceptionInterceptor .up.|> ExceptionInterceptor
+  testsuite.regression.ConnectionRegressionTest.TestBug67803ExceptionInterceptor .up.|> ExceptionInterceptor
+  testsuite.regression.ConnectionRegressionTest.TestBug71850ExceptionInterceptor .up.|> ExceptionInterceptor
+  testsuite.regression.ConnectionRegressionTest.ThreadPerTaskExecutor .up.|> Executor
+  testsuite.regression.ConnectionRegressionTest.ThreeAttemptsPlugin .up.|> AuthenticationPlugin
+  testsuite.regression.ConnectionRegressionTest.TwoQuestionsPlugin .up.|> AuthenticationPlugin
+  testsuite.regression.MetaDataRegressionTest +-down- testsuite.regression.MetaDataRegressionTest.StatementInterceptorBug61332
+  testsuite.regression.PooledConnectionRegressionTest +-down- testsuite.regression.PooledConnectionRegressionTest.ConnectionListener
+  testsuite.regression.PooledConnectionRegressionTest.ConnectionListener .up.|> ConnectionEventListener
+  testsuite.regression.ResultSetRegressionTest +-down- testsuite.regression.ResultSetRegressionTest.TestBug67318ExceptionInterceptor
+  testsuite.regression.ResultSetRegressionTest.TestBug67318ExceptionInterceptor .up.|> ExceptionInterceptor
+  testsuite.regression.StatementRegressionTest +-down- testsuite.regression.StatementRegressionTest.Bug39426Interceptor
+  testsuite.regression.StatementRegressionTest +-down- testsuite.regression.StatementRegressionTest.IsClosedInputStream
+  testsuite.regression.StatementRegressionTest +-down- testsuite.regression.StatementRegressionTest.IsClosedReader
+  testsuite.regression.StatementRegressionTest +-down- testsuite.regression.StatementRegressionTest.PrepareThread
+  testsuite.regression.StatementRegressionTest +-down- testsuite.regression.StatementRegressionTest.ScanDetectingInterceptor
+  testsuite.regression.StatementRegressionTest +-down- testsuite.regression.StatementRegressionTest.TestBug51666StatementInterceptor
+  testsuite.regression.StatementRegressionTest +-down- testsuite.regression.StatementRegressionTest.TestBug77183StatementInterceptor
+  testsuite.regression.StatementRegressionTest +-down- testsuite.regression.StatementRegressionTest.TestBug77449StatementInterceptor
+  testsuite.regression.StatementRegressionTest +-down- testsuite.regression.StatementRegressionTest.TestBug77681StatementInterceptor
+  testsuite.regression.StatementRegressionTest +-down- testsuite.regression.StatementRegressionTest.TestBug81706StatementInterceptor
+  testsuite.regression.StressRegressionTest +-down- testsuite.regression.StressRegressionTest.BusyThread
+  testsuite.regression.StressRegressionTest +-down- testsuite.regression.StressRegressionTest.ContentionThread
+  testsuite.regression.StressRegressionTest +-down- testsuite.regression.StressRegressionTest.CreateThread
+  testsuite.regression.StressRegressionTest +-down- testsuite.regression.StressRegressionTest.SharedInfoForTestBug67760
+  testsuite.regression.StressRegressionTest.CreateThread o-- testsuite.regression.StressRegressionTest.BusyThread : busyThread
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

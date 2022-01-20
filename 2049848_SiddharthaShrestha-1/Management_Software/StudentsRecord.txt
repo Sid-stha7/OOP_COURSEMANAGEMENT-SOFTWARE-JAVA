@@ -1,0 +1,121 @@
+
+Full Name:Full name
+ID: ID
+Modules: 
+4CI018: Academic Skills and Team Based Learning
+ 4CS001: Introductory Programming and Problem Solving
+4CS015: Fundamentals of Computing 
+4CS016: Embedded System Programming
+4CS017: Internet Software Architecture
+4MM013: Computational Mathematics
+(BSClevel4)
+			____________________________________________________________________
+
+
+
+
+Full Name:Full Name
+ID: Id
+Modules: 
+5CS037: Concepts and Technologies of AI
+ 5CS019: Object-Oriented Design and Programming
+5CS021: Numerical Methods and Concurrency 
+5CS022: Distributed and Cloud System Programming
+5CS024: Collaborative Development
+5CS020: Human Computer Interaction
+(BSClevel5)
+			____________________________________________________________________
+
+
+
+
+Full Name:Full Name
+ID: Id
+Modules: 
+6CS014: Complex System 
+ 6CS012: Artificial Intelligence and Machine Learning
+6CS005: High Performance Computing  
+6CS030: Big Data 
+Robotic engineering(optional)
+6CS007: Project and Professionalism(optional)
+(BSCLevel6)
+			____________________________________________________________________
+
+
+
+
+Full Name:Name
+ID: id
+Modules: 
+Module 
+ Module 
+Module  
+Module 
+Module 
+Module 
+
+			____________________________________________________________________
+
+
+
+
+Full Name:Full Name
+ID: id
+Modules: 
+4IB004: Business in a Global Context
+ 4MK007: Principles of Marketing
+4MK006: Introduction to Brand Communication 
+4HR002: Introduction to People at work
+4AC013: Financial Management
+
+(BBAlevel4)
+			____________________________________________________________________
+
+
+
+
+Full Name:Full Name
+ID: id
+Modules: 
+5FC003: International Financial Institutions and Market
+ 5IB004: Economics of Managerial Decision-Making
+5IB005: Contemporary Issues in IBM 
+5BU010: Digital Business and Innovation
+5BU012: Operations and Supply Management
+5HR006: International Human Resources – The Key Issues
+(BBAlevel5)
+			____________________________________________________________________
+
+
+
+
+Full Name:Full Name
+ID: id
+Modules: 
+6IB003: Dynamics of Multinational Companies
+ 6BU013: Independent Project
+6IB011: Business Research Methods 
+6BE003: Strategic Management(Optional)6MK001: International Marketing
+
+
+(BBAlevel6)
+			____________________________________________________________________
+
+
+Full Name:Full Name
+ID: id
+Modules: 
+4CI018: Academic Skills and Team Based Learning
+ 4CS001: Introductory Programming and Problem Solving
+4CS015: Fundamentals of Computing 
+4CS016: Embedded System Programming
+4CS017: Internet Software Architecture
+4MM013: Computational Mathematics
+(BSClevel4)
+			____________________________________________________________________
+
+
+
+
+
+

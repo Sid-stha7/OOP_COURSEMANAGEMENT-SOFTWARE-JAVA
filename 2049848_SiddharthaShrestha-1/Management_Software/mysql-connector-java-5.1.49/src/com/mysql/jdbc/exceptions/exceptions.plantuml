@@ -1,0 +1,179 @@
+@startuml
+
+title __EXCEPTIONS's Class Diagram__\n
+
+  namespace com.mysql.jdbc {
+    namespace exceptions {
+      interface com.mysql.jdbc.exceptions.DeadlockTimeoutRollbackMarker {
+      }
+    }
+  }
+  
+
+  namespace com.mysql.jdbc {
+    namespace exceptions {
+      class com.mysql.jdbc.exceptions.MySQLDataException {
+          {static} ~ serialVersionUID : long
+          + MySQLDataException()
+          + MySQLDataException()
+          + MySQLDataException()
+          + MySQLDataException()
+      }
+    }
+  }
+  
+
+  namespace com.mysql.jdbc {
+    namespace exceptions {
+      class com.mysql.jdbc.exceptions.MySQLIntegrityConstraintViolationException {
+          {static} ~ serialVersionUID : long
+          + MySQLIntegrityConstraintViolationException()
+          + MySQLIntegrityConstraintViolationException()
+          + MySQLIntegrityConstraintViolationException()
+          + MySQLIntegrityConstraintViolationException()
+      }
+    }
+  }
+  
+
+  namespace com.mysql.jdbc {
+    namespace exceptions {
+      class com.mysql.jdbc.exceptions.MySQLInvalidAuthorizationSpecException {
+          {static} ~ serialVersionUID : long
+          + MySQLInvalidAuthorizationSpecException()
+          + MySQLInvalidAuthorizationSpecException()
+          + MySQLInvalidAuthorizationSpecException()
+          + MySQLInvalidAuthorizationSpecException()
+      }
+    }
+  }
+  
+
+  namespace com.mysql.jdbc {
+    namespace exceptions {
+      class com.mysql.jdbc.exceptions.MySQLNonTransientConnectionException {
+          {static} ~ serialVersionUID : long
+          + MySQLNonTransientConnectionException()
+          + MySQLNonTransientConnectionException()
+          + MySQLNonTransientConnectionException()
+          + MySQLNonTransientConnectionException()
+      }
+    }
+  }
+  
+
+  namespace com.mysql.jdbc {
+    namespace exceptions {
+      class com.mysql.jdbc.exceptions.MySQLNonTransientException {
+          {static} ~ serialVersionUID : long
+          + MySQLNonTransientException()
+          + MySQLNonTransientException()
+          + MySQLNonTransientException()
+          + MySQLNonTransientException()
+      }
+    }
+  }
+  
+
+  namespace com.mysql.jdbc {
+    namespace exceptions {
+      class com.mysql.jdbc.exceptions.MySQLQueryInterruptedException {
+          {static} - serialVersionUID : long
+          + MySQLQueryInterruptedException()
+          + MySQLQueryInterruptedException()
+          + MySQLQueryInterruptedException()
+          + MySQLQueryInterruptedException()
+      }
+    }
+  }
+  
+
+  namespace com.mysql.jdbc {
+    namespace exceptions {
+      class com.mysql.jdbc.exceptions.MySQLStatementCancelledException {
+          {static} ~ serialVersionUID : long
+          + MySQLStatementCancelledException()
+          + MySQLStatementCancelledException()
+          + MySQLStatementCancelledException()
+          + MySQLStatementCancelledException()
+      }
+    }
+  }
+  
+
+  namespace com.mysql.jdbc {
+    namespace exceptions {
+      class com.mysql.jdbc.exceptions.MySQLSyntaxErrorException {
+          {static} ~ serialVersionUID : long
+          + MySQLSyntaxErrorException()
+          + MySQLSyntaxErrorException()
+          + MySQLSyntaxErrorException()
+          + MySQLSyntaxErrorException()
+      }
+    }
+  }
+  
+
+  namespace com.mysql.jdbc {
+    namespace exceptions {
+      class com.mysql.jdbc.exceptions.MySQLTimeoutException {
+          {static} ~ serialVersionUID : long
+          + MySQLTimeoutException()
+          + MySQLTimeoutException()
+          + MySQLTimeoutException()
+          + MySQLTimeoutException()
+      }
+    }
+  }
+  
+
+  namespace com.mysql.jdbc {
+    namespace exceptions {
+      class com.mysql.jdbc.exceptions.MySQLTransactionRollbackException {
+          {static} ~ serialVersionUID : long
+          + MySQLTransactionRollbackException()
+          + MySQLTransactionRollbackException()
+          + MySQLTransactionRollbackException()
+          + MySQLTransactionRollbackException()
+      }
+    }
+  }
+  
+
+  namespace com.mysql.jdbc {
+    namespace exceptions {
+      class com.mysql.jdbc.exceptions.MySQLTransientConnectionException {
+          {static} ~ serialVersionUID : long
+          + MySQLTransientConnectionException()
+          + MySQLTransientConnectionException()
+          + MySQLTransientConnectionException()
+          + MySQLTransientConnectionException()
+      }
+    }
+  }
+  
+
+  namespace com.mysql.jdbc {
+    namespace exceptions {
+      class com.mysql.jdbc.exceptions.MySQLTransientException {
+          {static} ~ serialVersionUID : long
+          + MySQLTransientException()
+          + MySQLTransientException()
+          + MySQLTransientException()
+          + MySQLTransientException()
+      }
+    }
+  }
+  
+
+  com.mysql.jdbc.exceptions.MySQLTransactionRollbackException .up.|> DeadlockTimeoutRollbackMarker
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

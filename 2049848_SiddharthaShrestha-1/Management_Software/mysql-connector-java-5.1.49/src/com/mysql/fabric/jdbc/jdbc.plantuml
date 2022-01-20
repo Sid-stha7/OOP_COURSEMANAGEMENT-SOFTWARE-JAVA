@@ -1,0 +1,614 @@
+@startuml
+
+title __JDBC's Class Diagram__\n
+
+  namespace com.mysql.fabric {
+    namespace jdbc {
+      class com.mysql.fabric.jdbc.ErrorReportingExceptionInterceptor {
+          - fabricHaGroup : String
+          - hostname : String
+          - port : String
+          + destroy()
+          + init()
+          + interceptException()
+      }
+    }
+  }
+  
+
+  namespace com.mysql.fabric {
+    namespace jdbc {
+      interface com.mysql.fabric.jdbc.FabricMySQLConnection {
+          {abstract} + addQueryTable()
+          {abstract} + clearQueryTables()
+          {abstract} + clearServerSelectionCriteria()
+          {abstract} + getCurrentServerGroup()
+          {abstract} + getQueryTables()
+          {abstract} + getServerGroupName()
+          {abstract} + getShardKey()
+          {abstract} + getShardTable()
+          {abstract} + setServerGroupName()
+          {abstract} + setShardKey()
+          {abstract} + setShardTable()
+      }
+    }
+  }
+  
+
+  namespace com.mysql.fabric {
+    namespace jdbc {
+      interface com.mysql.fabric.jdbc.FabricMySQLConnectionProperties {
+          {abstract} + getFabricPassword()
+          {abstract} + getFabricProtocol()
+          {abstract} + getFabricReportErrors()
+          {abstract} + getFabricServerGroup()
+          {abstract} + getFabricShardKey()
+          {abstract} + getFabricShardTable()
+          {abstract} + getFabricUsername()
+          {abstract} + setFabricPassword()
+          {abstract} + setFabricProtocol()
+          {abstract} + setFabricReportErrors()
+          {abstract} + setFabricServerGroup()
+          {abstract} + setFabricShardKey()
+          {abstract} + setFabricShardTable()
+          {abstract} + setFabricUsername()
+      }
+    }
+  }
+  
+
+  namespace com.mysql.fabric {
+    namespace jdbc {
+      class com.mysql.fabric.jdbc.FabricMySQLConnectionProxy {
+          # autoCommit : boolean
+          # closed : boolean
+          # currentConnection : ReplicationConnection
+          # database : String
+          # fabricConnection : FabricConnection
+          # host : String
+          # password : String
+          # port : String
+          # queryTables : Set<String>
+          # readOnly : boolean
+          # serverConnections : Map<ServerGroup, ReplicationConnection>
+          # serverGroup : ServerGroup
+          # serverGroupName : String
+          # shardKey : String
+          # shardMapping : ShardMapping
+          # shardTable : String
+          # transactionInProgress : boolean
+          # transactionIsolation : int
+          # username : String
+          {static} - JDBC4_NON_TRANSIENT_CONN_EXCEPTION : Class<?>
+          - fabricPassword : String
+          - fabricProtocol : String
+          - fabricServerGroup : String
+          - fabricShardKey : String
+          - fabricShardTable : String
+          - fabricUsername : String
+          - log : Log
+          {static} - replConnGroupLocks : Set<String>
+          - reportErrors : boolean
+          {static} - serialVersionUID : long
+          + FabricMySQLConnectionProxy()
+          + abort()
+          + abortInternal()
+          + addQueryTable()
+          + changeUser()
+          + checkClosed()
+          + clearHasTriedMaster()
+          + clearQueryTables()
+          + clearServerSelectionCriteria()
+          + clearWarnings()
+          + clientPrepareStatement()
+          + clientPrepareStatement()
+          + clientPrepareStatement()
+          + clientPrepareStatement()
+          + clientPrepareStatement()
+          + clientPrepareStatement()
+          + close()
+          + commit()
+          + createNewIO()
+          + createStatement()
+          + createStatement()
+          + createStatement()
+          + decachePreparedStatement()
+          + dumpTestcaseQuery()
+          + duplicate()
+          + execSQL()
+          + execSQL()
+          + extractSqlFromPacket()
+          + generateConnectionCommentBlock()
+          + getActiveMySQLConnection()
+          + getActiveStatementCount()
+          + getAutoCommit()
+          + getAutoIncrementIncrement()
+          + getCachedMetaData()
+          + getCalendarInstanceForSessionOrNew()
+          + getCancelTimer()
+          + getCatalog()
+          + getCharacterSetMetadata()
+          + getCharsetConverter()
+          + getCharsetNameForIndex()
+          + getClientInfo()
+          + getClientInfo()
+          + getConnectionMutex()
+          + getCurrentServerGroup()
+          + getDefaultTimeZone()
+          + getEncodingForIndex()
+          + getErrorMessageEncoding()
+          + getExceptionInterceptor()
+          + getFabricPassword()
+          + getFabricProtocol()
+          + getFabricReportErrors()
+          + getFabricServerGroup()
+          + getFabricShardKey()
+          + getFabricShardTable()
+          + getFabricUsername()
+          + getHoldability()
+          + getHost()
+          + getHostPortPair()
+          + getIO()
+          + getId()
+          + getIdleFor()
+          + getLoadBalanceSafeProxy()
+          + getLog()
+          + getMaxBytesPerChar()
+          + getMaxBytesPerChar()
+          + getMetaData()
+          + getMetadataSafeStatement()
+          + getMultiHostSafeProxy()
+          + getNetBufferLength()
+          + getNetworkTimeout()
+          + getProfilerEventHandlerInstance()
+          + getProperties()
+          + getQueryTables()
+          + getQueryTimingUnits()
+          + getRequiresEscapingEncoder()
+          + getSchema()
+          + getServerCharacterEncoding()
+          + getServerCharset()
+          + getServerGroupName()
+          + getServerMajorVersion()
+          + getServerMinorVersion()
+          + getServerSubMinorVersion()
+          + getServerTimezoneTZ()
+          + getServerVariable()
+          + getServerVersion()
+          + getSessionLockedCalendar()
+          + getSessionMaxRows()
+          + getShardKey()
+          + getShardTable()
+          + getStatementComment()
+          + getStatementInterceptorsInstances()
+          + getTransactionIsolation()
+          + getTypeMap()
+          + getURL()
+          + getUser()
+          + getUtcCalendar()
+          + getWarnings()
+          + hasSameProperties()
+          + hasTriedMaster()
+          + incrementNumberOfPreparedExecutes()
+          + incrementNumberOfPrepares()
+          + incrementNumberOfResultSetsCreated()
+          + initializeExtension()
+          + initializeResultsMetadataFromCache()
+          + initializeSafeStatementInterceptors()
+          + isAbonormallyLongQuery()
+          + isClientTzUTC()
+          + isClosed()
+          + isCursorFetchEnabled()
+          + isInGlobalTx()
+          + isMasterConnection()
+          + isNoBackslashEscapesSet()
+          + isProxySet()
+          + isReadInfoMsgEnabled()
+          + isReadOnly()
+          + isReadOnly()
+          + isRunningOnJDK13()
+          + isSameResource()
+          + isServerLocal()
+          + isServerTruncatesFracSecs()
+          + isServerTzUTC()
+          + isValid()
+          + isWrapperFor()
+          + lowerCaseTableNames()
+          + maxRowsChanged()
+          + nativeSQL()
+          + parserKnowsUnicode()
+          + ping()
+          + pingInternal()
+          + prepareCall()
+          + prepareCall()
+          + prepareCall()
+          + prepareStatement()
+          + prepareStatement()
+          + prepareStatement()
+          + prepareStatement()
+          + prepareStatement()
+          + prepareStatement()
+          + realClose()
+          + recachePreparedStatement()
+          + registerQueryExecutionTime()
+          + registerStatement()
+          + releaseSavepoint()
+          + reportNumberOfTablesAccessed()
+          + reportQueryTime()
+          + resetServerState()
+          + rollback()
+          + rollback()
+          + serverPrepareStatement()
+          + serverPrepareStatement()
+          + serverPrepareStatement()
+          + serverPrepareStatement()
+          + serverPrepareStatement()
+          + serverPrepareStatement()
+          + serverSupportsConvertFn()
+          + setAllowLoadLocalInfile()
+          + setAllowMultiQueries()
+          + setAllowNanAndInf()
+          + setAllowUrlInLocalInfile()
+          + setAlwaysSendSetIsolation()
+          + setAuthenticationPlugins()
+          + setAutoClosePStmtStreams()
+          + setAutoCommit()
+          + setAutoDeserialize()
+          + setAutoGenerateTestcaseScript()
+          + setAutoReconnect()
+          + setAutoReconnectForConnectionPools()
+          + setAutoReconnectForPools()
+          + setAutoSlowLog()
+          + setBlobSendChunkSize()
+          + setBlobsAreStrings()
+          + setCacheCallableStatements()
+          + setCacheCallableStmts()
+          + setCachePrepStmts()
+          + setCachePreparedStatements()
+          + setCacheResultSetMetadata()
+          + setCacheServerConfiguration()
+          + setCallableStatementCacheSize()
+          + setCallableStmtCacheSize()
+          + setCapitalizeDBMDTypes()
+          + setCapitalizeTypeNames()
+          + setCatalog()
+          + setCharacterEncoding()
+          + setCharacterSetResults()
+          + setClientCertificateKeyStorePassword()
+          + setClientCertificateKeyStoreType()
+          + setClientCertificateKeyStoreUrl()
+          + setClientInfoProvider()
+          + setClobCharacterEncoding()
+          + setClobberStreamingResults()
+          + setCompensateOnDuplicateKeyUpdateCounts()
+          + setConnectTimeout()
+          + setConnectionCollation()
+          + setConnectionLifecycleInterceptors()
+          + setContinueBatchOnError()
+          + setCreateDatabaseIfNotExist()
+          + setDefaultAuthenticationPlugin()
+          + setDefaultFetchSize()
+          + setDetectServerPreparedStmts()
+          + setDisabledAuthenticationPlugins()
+          + setDisconnectOnExpiredPasswords()
+          + setDontTrackOpenResources()
+          + setDumpMetadataOnColumnNotFound()
+          + setDumpQueriesOnException()
+          + setDynamicCalendars()
+          + setElideSetAutoCommits()
+          + setEmptyStringsConvertToZero()
+          + setEmulateLocators()
+          + setEmulateUnsupportedPstmts()
+          + setEnablePacketDebug()
+          + setEnableQueryTimeouts()
+          + setEncoding()
+          + setExceptionInterceptors()
+          + setExplainSlowQueries()
+          + setFabricPassword()
+          + setFabricProtocol()
+          + setFabricReportErrors()
+          + setFabricServerGroup()
+          + setFabricShardKey()
+          + setFabricShardTable()
+          + setFabricUsername()
+          + setFailOverReadOnly()
+          + setFailedOver()
+          + setFunctionsNeverReturnBlobs()
+          + setGatherPerfMetrics()
+          + setGatherPerformanceMetrics()
+          + setGenerateSimpleParameterMetadata()
+          + setGetProceduresReturnsFunctions()
+          + setHoldResultsOpenOverStatementClose()
+          + setHoldability()
+          + setIgnoreNonTxTables()
+          + setInGlobalTx()
+          + setIncludeInnodbStatusInDeadlockExceptions()
+          + setIncludeThreadDumpInDeadlockExceptions()
+          + setIncludeThreadNamesAsStatementComment()
+          + setInitialTimeout()
+          + setInteractiveClient()
+          + setIsInteractiveClient()
+          + setJdbcCompliantTruncation()
+          + setJdbcCompliantTruncationForReads()
+          + setLargeRowSizeThreshold()
+          + setLoadBalanceAutoCommitStatementRegex()
+          + setLoadBalanceAutoCommitStatementThreshold()
+          + setLoadBalanceBlacklistTimeout()
+          + setLoadBalanceConnectionGroup()
+          + setLoadBalanceEnableJMX()
+          + setLoadBalanceExceptionChecker()
+          + setLoadBalancePingTimeout()
+          + setLoadBalanceSQLExceptionSubclassFailover()
+          + setLoadBalanceSQLStateFailover()
+          + setLoadBalanceStrategy()
+          + setLoadBalanceValidateConnectionOnSwapServer()
+          + setLocalSocketAddress()
+          + setLocatorFetchBufferSize()
+          + setLogSlowQueries()
+          + setLogXaCommands()
+          + setLogger()
+          + setLoggerClassName()
+          + setMaintainTimeStats()
+          + setMaxQuerySizeToLog()
+          + setMaxReconnects()
+          + setMaxRows()
+          + setMetadataCacheSize()
+          + setNetTimeoutForStreamingResults()
+          + setNetworkTimeout()
+          + setNoAccessToProcedureBodies()
+          + setNoDatetimeStringSync()
+          + setNoTimezoneConversionForTimeType()
+          + setNullCatalogMeansCurrent()
+          + setNullNamePatternMatchesAll()
+          + setOverrideSupportsIntegrityEnhancementFacility()
+          + setPacketDebugBufferSize()
+          + setPadCharsWithSpace()
+          + setParanoid()
+          + setParseInfoCacheFactory()
+          + setPasswordCharacterEncoding()
+          + setPedantic()
+          + setPinGlobalTxToPhysicalConnection()
+          + setPopulateInsertRowWithDefaultValues()
+          + setPreferSlaveDuringFailover()
+          + setPrepStmtCacheSize()
+          + setPrepStmtCacheSqlLimit()
+          + setPreparedStatementCacheSize()
+          + setPreparedStatementCacheSqlLimit()
+          + setProcessEscapeCodesForPrepStmts()
+          + setProfileSQL()
+          + setProfileSql()
+          + setProfilerEventHandler()
+          + setProfilerEventHandlerInstance()
+          + setPropertiesTransform()
+          + setProxy()
+          + setQueriesBeforeRetryMaster()
+          + setQueryTimeoutKillsConnection()
+          + setReadInfoMsgEnabled()
+          + setReadOnly()
+          + setReadOnlyInternal()
+          + setReconnectAtTxEnd()
+          + setRelaxAutoCommit()
+          + setReportMetricsIntervalMillis()
+          + setRequireSSL()
+          + setResourceId()
+          + setResultSetSizeThreshold()
+          + setRetainStatementAfterResultSetClose()
+          + setRetriesAllDown()
+          + setRewriteBatchedStatements()
+          + setRollbackOnPooledClose()
+          + setRoundRobinLoadBalance()
+          + setRunningCTS13()
+          + setSavepoint()
+          + setSavepoint()
+          + setSchema()
+          + setSecondsBeforeRetryMaster()
+          + setSelfDestructOnPingMaxOperations()
+          + setSelfDestructOnPingSecondsLifetime()
+          + setServerConfigCacheFactory()
+          + setServerGroupName()
+          + setServerTimezone()
+          + setSessionMaxRows()
+          + setSessionVariables()
+          + setShardKey()
+          + setShardTable()
+          + setSlowQueryThresholdMillis()
+          + setSlowQueryThresholdNanos()
+          + setSocketFactory()
+          + setSocketFactoryClassName()
+          + setSocketTimeout()
+          + setStatementComment()
+          + setStatementInterceptors()
+          + setStrictFloatingPoint()
+          + setStrictUpdates()
+          + setTcpKeepAlive()
+          + setTcpNoDelay()
+          + setTcpRcvBuf()
+          + setTcpSndBuf()
+          + setTcpTrafficClass()
+          + setTinyInt1isBit()
+          + setTraceProtocol()
+          + setTransactionIsolation()
+          + setTransformedBitIsBoolean()
+          + setTreatUtilDateAsTimestamp()
+          + setTrustCertificateKeyStorePassword()
+          + setTrustCertificateKeyStoreType()
+          + setTrustCertificateKeyStoreUrl()
+          + setTypeMap()
+          + setUltraDevHack()
+          + setUseAffectedRows()
+          + setUseBlobToStoreUTF8OutsideBMP()
+          + setUseColumnNamesInFindColumn()
+          + setUseCompression()
+          + setUseConfigs()
+          + setUseCursorFetch()
+          + setUseDirectRowUnpack()
+          + setUseDynamicCharsetInfo()
+          + setUseFastDateParsing()
+          + setUseFastIntParsing()
+          + setUseGmtMillisForDatetimes()
+          + setUseHostsInPrivileges()
+          + setUseInformationSchema()
+          + setUseJDBCCompliantTimezoneShift()
+          + setUseJvmCharsetConverters()
+          + setUseLegacyDatetimeCode()
+          + setUseLocalSessionState()
+          + setUseLocalTransactionState()
+          + setUseNanosForElapsedTime()
+          + setUseOldAliasMetadataBehavior()
+          + setUseOldUTF8Behavior()
+          + setUseOnlyServerErrorMessages()
+          + setUseReadAheadInput()
+          + setUseSSL()
+          + setUseSSPSCompatibleTimezoneShift()
+          + setUseServerPrepStmts()
+          + setUseServerPreparedStmts()
+          + setUseSqlStateCodes()
+          + setUseStreamLengthsInPrepStmts()
+          + setUseTimezone()
+          + setUseUltraDevWorkAround()
+          + setUseUnbufferedInput()
+          + setUseUnicode()
+          + setUseUsageAdvisor()
+          + setUtf8OutsideBmpExcludedColumnNamePattern()
+          + setUtf8OutsideBmpIncludedColumnNamePattern()
+          + setVerifyServerCertificate()
+          + setYearIsDateType()
+          + setZeroDateTimeBehavior()
+          + shutdownServer()
+          + storesLowerCaseTableName()
+          + supportsIsolationLevel()
+          + supportsQuotedIdentifiers()
+          + supportsTransactions()
+          + throwConnectionClosedException()
+          + transactionBegun()
+          + transactionCompleted()
+          + unSafeStatementInterceptors()
+          + unregisterStatement()
+          + unsetMaxRows()
+          + unwrap()
+          + useAnsiQuotedIdentifiers()
+          + useMaxRows()
+          + versionMeetsMinimum()
+          # getActiveConnection()
+          # getActiveConnectionPassive()
+          # getActiveMySQLConnectionChecked()
+          # setCurrentServerGroup()
+          ~ interceptException()
+          - ensureNoTransactionInProgress()
+          - ensureOpen()
+          - refreshStateIfNecessary()
+          - syncGroupServersToReplicationConnectionGroup()
+      }
+    }
+  }
+  
+
+  namespace com.mysql.fabric {
+    namespace jdbc {
+      class com.mysql.fabric.jdbc.FabricMySQLDataSource {
+          {static} - driver : Driver
+          - fabricPassword : String
+          - fabricProtocol : String
+          - fabricReportErrors : boolean
+          - fabricServerGroup : String
+          - fabricShardKey : String
+          - fabricShardTable : String
+          - fabricUsername : String
+          {static} - serialVersionUID : long
+          + getFabricPassword()
+          + getFabricProtocol()
+          + getFabricReportErrors()
+          + getFabricServerGroup()
+          + getFabricShardKey()
+          + getFabricShardTable()
+          + getFabricUsername()
+          + setFabricPassword()
+          + setFabricProtocol()
+          + setFabricReportErrors()
+          + setFabricServerGroup()
+          + setFabricShardKey()
+          + setFabricShardTable()
+          + setFabricUsername()
+          # getConnection()
+      }
+    }
+  }
+  
+
+  namespace com.mysql.fabric {
+    namespace jdbc {
+      class com.mysql.fabric.jdbc.FabricMySQLDriver {
+          {static} + FABRIC_PASSWORD_PROPERTY_KEY : String
+          {static} + FABRIC_PROTOCOL_PROPERTY_KEY : String
+          {static} + FABRIC_REPORT_ERRORS_PROPERTY_KEY : String
+          {static} + FABRIC_SERVER_GROUP_PROPERTY_KEY : String
+          {static} + FABRIC_SHARD_KEY_PROPERTY_KEY : String
+          {static} + FABRIC_SHARD_TABLE_PROPERTY_KEY : String
+          {static} + FABRIC_URL_PREFIX : String
+          {static} + FABRIC_USERNAME_PROPERTY_KEY : String
+          + FabricMySQLDriver()
+          + acceptsURL()
+          + connect()
+          + getParentLogger()
+          ~ parseFabricURL()
+      }
+    }
+  }
+  
+
+  namespace com.mysql.fabric {
+    namespace jdbc {
+      interface com.mysql.fabric.jdbc.JDBC4FabricMySQLConnection {
+          {abstract} + addQueryTable()
+          {abstract} + clearQueryTables()
+          {abstract} + clearServerSelectionCriteria()
+          {abstract} + getCurrentServerGroup()
+          {abstract} + getQueryTables()
+          {abstract} + getServerGroupName()
+          {abstract} + getShardKey()
+          {abstract} + getShardTable()
+          {abstract} + setServerGroupName()
+          {abstract} + setShardKey()
+          {abstract} + setShardTable()
+      }
+    }
+  }
+  
+
+  namespace com.mysql.fabric {
+    namespace jdbc {
+      class com.mysql.fabric.jdbc.JDBC4FabricMySQLConnectionProxy {
+          - fabricConnection : FabricConnection
+          {static} - serialVersionUID : long
+          + JDBC4FabricMySQLConnectionProxy()
+          + createArrayOf()
+          + createBlob()
+          + createClob()
+          + createNClob()
+          + createSQLXML()
+          + createStruct()
+          + getClientInfoProviderImpl()
+          + setClientInfo()
+          + setClientInfo()
+      }
+    }
+  }
+  
+
+  com.mysql.fabric.jdbc.ErrorReportingExceptionInterceptor .up.|> ExceptionInterceptor
+  com.mysql.fabric.jdbc.FabricMySQLConnectionProxy .up.|> FabricMySQLConnection
+  com.mysql.fabric.jdbc.FabricMySQLConnectionProxy .up.|> FabricMySQLConnectionProperties
+  com.mysql.fabric.jdbc.FabricMySQLDataSource .up.|> FabricMySQLConnectionProperties
+  com.mysql.fabric.jdbc.FabricMySQLDriver .up.|> Driver
+  com.mysql.fabric.jdbc.JDBC4FabricMySQLConnectionProxy .up.|> FabricMySQLConnectionProperties
+  com.mysql.fabric.jdbc.JDBC4FabricMySQLConnectionProxy .up.|> JDBC4FabricMySQLConnection
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

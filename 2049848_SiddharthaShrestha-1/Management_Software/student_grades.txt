@@ -1,0 +1,36 @@
+Name: Siddhartha Shrestha
+Id :NP03A190145
+Module nameJAVA
+Marks :100
+				________________________________________________________________
+
+Name: Siddhartha Shrestha
+Id :NP03A190145
+Module namePython
+Marks :100
+				________________________________________________________________
+
+Name: Siddhartha Shrestha
+Id :NP03A190145
+Module nameC programming
+Marks :100
+				________________________________________________________________
+
+Name: Jiraya Sensei
+Id :NP03A190145
+Module nameC programming
+Marks :100
+				________________________________________________________________
+
+Name: Jiraya Sensei
+Id :NP03A190145
+Module namePython
+Marks :100
+				________________________________________________________________
+
+Name: Jiraya Sensei
+Id :NP03A190145
+Module nameC programming
+Marks :80
+				________________________________________________________________
+

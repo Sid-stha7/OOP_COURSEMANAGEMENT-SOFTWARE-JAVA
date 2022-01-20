@@ -1,0 +1,312 @@
+@startuml
+
+title __TESTSUITE's Class Diagram__\n
+
+  namespace testsuite {
+    class testsuite.BaseStatementInterceptor {
+        + destroy()
+        + executeTopLevelOnly()
+        + init()
+        + postProcess()
+        + preProcess()
+    }
+  }
+  
+
+  namespace testsuite {
+    abstract class testsuite.BaseTestCase {
+        # DISABLED_testBug15121 : boolean
+        # DISABLED_testBug2654 : boolean
+        # DISABLED_testBug5136 : boolean
+        # DISABLED_testBug65503 : boolean
+        # DISABLED_testBug7033 : boolean
+        # DISABLED_testContention : boolean
+        # conn : Connection
+        # dbClass : String
+        {static} # dbUrl : String
+        # pstmt : PreparedStatement
+        # rs : ResultSet
+        # sha256Conn : Connection
+        # sha256Rs : ResultSet
+        # sha256Stmt : Statement
+        {static} # sha256Url : String
+        # stmt : Statement
+        {static} - ADMIN_CONNECTION_PROPERTY_NAME : String
+        {static} - NO_MULTI_HOST_PROPERTY_NAME : String
+        - createdObjects : List<String[]>
+        {static} - instanceCount : int
+        - isOnCSFS : boolean
+        - myInstanceNumber : int
+        + BaseTestCase()
+        + getConnectionWithProps()
+        + logDebug()
+        + setUp()
+        + tearDown()
+        # assertByteArrayEquals()
+        {static} # assertConnectionsHistory()
+        # assertEqualsFSAware()
+        # assertResultSetLength()
+        # assertResultSetsEqual()
+        {static} # assertThrows()
+        {static} # assertThrows()
+        {static} # assertThrows()
+        {static} # assertThrows()
+        # cleanupTempFiles()
+        # createDatabase()
+        # createDatabase()
+        # createFunction()
+        # createFunction()
+        # createProcedure()
+        # createProcedure()
+        # createSchemaObject()
+        # createSchemaObject()
+        # createTable()
+        # createTable()
+        # createTable()
+        # createTable()
+        # createUser()
+        # createUser()
+        # createView()
+        # createView()
+        {static} # currentTimeMillis()
+        # dropDatabase()
+        # dropDatabase()
+        # dropFunction()
+        # dropFunction()
+        # dropProcedure()
+        # dropProcedure()
+        # dropSchemaObject()
+        # dropSchemaObject()
+        # dropTable()
+        # dropTable()
+        # dropUser()
+        # dropUser()
+        # dropView()
+        # dropView()
+        # fillPrimitiveDefaults()
+        # getAdminConnection()
+        # getAdminConnectionWithProps()
+        # getConnectionWithProps()
+        # getConnectionWithProps()
+        # getConnectionWithProps()
+        # getFailoverConnection()
+        # getFailoverConnection()
+        # getHostFreePropertiesFromTestsuiteUrl()
+        # getHostFreePropertiesFromTestsuiteUrl()
+        # getInstanceNumber()
+        # getLoadBalancedConnection()
+        # getLoadBalancedConnection()
+        # getLoadBalancedConnection()
+        # getMasterSlaveReplicationConnection()
+        # getMasterSlaveReplicationConnection()
+        # getMasterSlaveUrl()
+        # getMysqlVariable()
+        # getMysqlVariable()
+        # getNewConnection()
+        # getNewSha256Connection()
+        # getNoDbUrl()
+        # getPort()
+        # getPortFreeHostname()
+        # getPropertiesFromTestsuiteUrl()
+        # getPropertiesFromUrl()
+        # getRowCount()
+        # getSingleIndexedValueWithQuery()
+        # getSingleIndexedValueWithQuery()
+        # getSingleValue()
+        # getSingleValueWithQuery()
+        # getTableTypeDecl()
+        # getUnreliableFailoverConnection()
+        # getUnreliableFailoverConnection()
+        # getUnreliableLoadBalancedConnection()
+        # getUnreliableLoadBalancedConnection()
+        # getUnreliableMultiHostConnection()
+        # getUnreliableReplicationConnection()
+        # getUnreliableReplicationConnection()
+        # getUnreliableReplicationConnection()
+        # isAdminConnectionConfigured()
+        # isClassAvailable()
+        # isCommunityEdition()
+        # isEnterpriseEdition()
+        # isRunningOnJRockit()
+        # isServerRunningOnWindows()
+        # newTempBinaryFile()
+        # randomString()
+        # removeHostRelatedProps()
+        # removeSqlMode()
+        # runLongTests()
+        # runMultiHostTests()
+        # runTestIfSysPropDefined()
+        # versionMeetsMinimum()
+        # versionMeetsMinimum()
+    }
+  }
+  
+
+  namespace testsuite {
+    class testsuite.BaseTestCase.MockConnectionConfiguration {
+        ~ hostName : String
+        ~ isDowned : boolean
+        ~ port : String
+        ~ serverType : String
+        + MockConnectionConfiguration()
+        + getAddress()
+        + getAddress()
+    }
+  }
+  
+
+  namespace testsuite {
+    class testsuite.BufferingLogger {
+        {static} - bufferedLog : StringBuffer
+        + BufferingLogger()
+        + BufferingLogger()
+        {static} + dropBuffer()
+        {static} + getBuffer()
+        {static} + startLoggingToBuffer()
+        # logInternal()
+    }
+  }
+  
+
+  namespace testsuite {
+    class testsuite.UnreliableSocketFactory {
+        {static} + DEFAULT_TIMEOUT_MILLIS : long
+        {static} + STATUS_CONNECTED : String
+        {static} + STATUS_FAILED : String
+        {static} + STATUS_UNKNOWN : String
+        {static} ~ CONNECTION_ATTEMPTS : List<String>
+        {static} ~ HUNG_CONNECT_HOSTS : Set<String>
+        {static} ~ HUNG_READ_HOSTS : Set<String>
+        {static} ~ HUNG_WRITE_HOSTS : Set<String>
+        {static} ~ IMMEDIATELY_DOWNED_HOSTS : Set<String>
+        {static} - MAPPED_HOSTS : Map<String, String>
+        - hostname : String
+        - portNumber : int
+        - props : Properties
+        + afterHandshake()
+        + beforeHandshake()
+        + connect()
+        {static} + dontDownHost()
+        {static} + dontHangOnConnect()
+        {static} + dontHangOnRead()
+        {static} + dontHangOnWrite()
+        {static} + downHost()
+        {static} + flushAllStaticData()
+        {static} + flushConnectionAttempts()
+        {static} + getHostConnectedStatus()
+        {static} + getHostFailedStatus()
+        {static} + getHostFromLastConnection()
+        {static} + getHostFromPastConnection()
+        {static} + getHostUnknownStatus()
+        {static} + getHostsFromAllConnections()
+        {static} + getHostsFromLastConnections()
+        {static} + hangOnConnect()
+        {static} + hangOnRead()
+        {static} + hangOnWrite()
+        {static} + isConnected()
+        {static} + mapHost()
+        {static} ~ sleepMillisForProperty()
+        - getNewSocket()
+    }
+  }
+  
+
+  namespace testsuite {
+    class testsuite.UnreliableSocketFactory.HangingInputStream {
+        ~ aliasedHostname : String
+        ~ props : Properties
+        ~ underlyingInputStream : InputStream
+        + available()
+        + close()
+        + mark()
+        + markSupported()
+        + read()
+        + read()
+        + read()
+        + reset()
+        + skip()
+        ~ HangingInputStream()
+        - failIfRequired()
+    }
+  }
+  
+
+  namespace testsuite {
+    class testsuite.UnreliableSocketFactory.HangingOutputStream {
+        ~ aliasedHostname : String
+        ~ props : Properties
+        ~ underlyingOutputStream : OutputStream
+        + close()
+        + flush()
+        + write()
+        + write()
+        + write()
+        ~ HangingOutputStream()
+        - failIfRequired()
+    }
+  }
+  
+
+  namespace testsuite {
+    class testsuite.UnreliableSocketFactory.HangingSocket {
+        ~ aliasedHostname : String
+        ~ props : Properties
+        ~ underlyingSocket : Socket
+        + bind()
+        + close()
+        + getChannel()
+        + getInetAddress()
+        + getInputStream()
+        + getKeepAlive()
+        + getLocalAddress()
+        + getLocalPort()
+        + getLocalSocketAddress()
+        + getOOBInline()
+        + getOutputStream()
+        + getPort()
+        + getReceiveBufferSize()
+        + getRemoteSocketAddress()
+        + getReuseAddress()
+        + getSendBufferSize()
+        + getSoLinger()
+        + getSoTimeout()
+        + getTcpNoDelay()
+        + getTrafficClass()
+        + isBound()
+        + isClosed()
+        + isConnected()
+        + isInputShutdown()
+        + isOutputShutdown()
+        + sendUrgentData()
+        + setKeepAlive()
+        + setOOBInline()
+        + setReceiveBufferSize()
+        + setReuseAddress()
+        + setSendBufferSize()
+        + setSoLinger()
+        + setSoTimeout()
+        + setTcpNoDelay()
+        + setTrafficClass()
+        + shutdownInput()
+        + shutdownOutput()
+        + toString()
+        ~ HangingSocket()
+    }
+  }
+  
+
+  testsuite.BaseStatementInterceptor .up.|> StatementInterceptorV2
+  testsuite.BaseTestCase +-down- testsuite.BaseTestCase.MockConnectionConfiguration
+  testsuite.UnreliableSocketFactory +-down- testsuite.UnreliableSocketFactory.HangingInputStream
+  testsuite.UnreliableSocketFactory +-down- testsuite.UnreliableSocketFactory.HangingOutputStream
+  testsuite.UnreliableSocketFactory +-down- testsuite.UnreliableSocketFactory.HangingSocket
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
