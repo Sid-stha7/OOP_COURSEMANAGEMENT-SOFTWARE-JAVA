@@ -15,7 +15,7 @@ This software is a GUI based course management system for educational organizati
 * View students who are assigned
 * Assign Grades
 
-<h3>Admin</h3>
+<h3> Admin </h3>
 * Create Courses
 * Edit courses 
 * Assign Teacher
